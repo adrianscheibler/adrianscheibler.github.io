@@ -1,3 +1,6 @@
+/* Load Lato (light/regular/bold) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
 /* Base */
 :root {
   --bg: #ffffff;
@@ -16,9 +19,11 @@ html, body {
   padding: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;
+  font-family: "Lato", -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif;
   line-height: 1.6;
   font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a { color: var(--link); text-decoration: none; }
@@ -52,28 +57,59 @@ a:hover { text-decoration: underline; }
 }
 .nav a:hover { color: var(--brand); }
 
+/* Optional: header variant with no brand (Gov20 page) */
+.header-min .container { justify-content: flex-end; }
+
 /* Hero / Home layout */
 .hero {
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 200px 1fr;
   gap: 24px;
   padding: 40px 0 24px;
 }
 .headshot {
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 8px;      /* Marc-like: subtle rounded */
+  border-radius: 8px;
   border: 1px solid var(--border);
 }
+
+/* Profile block (under the headshot) */
+.profile-meta { margin-top: 12px; }
+.name {
+  font-weight: 700;
+  margin: 0 0 2px 0;
+  line-height: 1.2;
+}
+.role, .affil {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+}
+.role { margin-top: 2px; }
+.affil { margin-top: 2px; }
+
+.link-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-weight: 700;
+}
+.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+/* Right column of hero */
 .hero-text h1 {
   margin-top: 0;
   margin-bottom: 16px;
   line-height: 1.2;
 }
-.contact-row {
-  margin-top: 18px;
-}
+.contact-row { margin-top: 18px; }
 
 /* Buttons */
 .btn {
@@ -92,22 +128,18 @@ a:hover { text-decoration: underline; }
 .site-footer {
   border-top: 1px solid var(--border);
   margin-top: 40px;
+  padding: 10px 0;
 }
 .site-footer p {
   color: var(--muted);
+  font-size: 12px;          /* smaller footer text */
+  text-align: center;
 }
 
 /* Page shells */
-.page {
-  padding: 36px 0;
-}
-.page h1 {
-  margin: 0 0 8px 0;
-}
-.page .subtle {
-  color: var(--muted);
-  margin-top: 0;
-}
+.page { padding: 36px 0; }
+.page h1 { margin: 0 0 8px 0; }
+.page .subtle { color: var(--muted); margin-top: 0; }
 
 /* Teaching list */
 .card {
@@ -116,13 +148,8 @@ a:hover { text-decoration: underline; }
   padding: 16px;
   margin: 12px 0;
 }
-.card h3 {
-  margin: 0 0 6px 0;
-}
-.card .meta {
-  color: var(--muted);
-  margin: 0 0 10px 0;
-}
+.card h3 { margin: 0 0 6px 0; }
+.card .meta { color: var(--muted); margin: 0 0 10px 0; }
 
 /* Tables (for course schedules) */
 table {
@@ -136,17 +163,6 @@ th, td {
   border-bottom: 1px solid var(--border);
 }
 th { background: #fafafa; }
-
-/* Responsive */
-@media (max-width: 700px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-  .headshot {
-    width: 140px;
-    height: 140px;
-  }
-}
 
 /* --- Gov20 sidebar layout --- */
 .split {
@@ -194,9 +210,7 @@ th { background: #fafafa; }
 }
 
 /* Content column */
-.course {
-  display: block;
-}
+.course { display: block; }
 .course h1 { margin-bottom: 6px; }
 .course .subtle { margin-top: 0; }
 
@@ -222,8 +236,12 @@ th { background: #fafafa; }
   box-shadow: 0 0 0 3px #11111110;
 }
 
-/* Responsive: stack the sidebar on small screens */
+/* Responsive */
 @media (max-width: 900px) {
   .split { grid-template-columns: 1fr; }
   .sidebar { position: static; }
+}
+@media (max-width: 700px) {
+  .hero { grid-template-columns: 1fr; }
+  .headshot { width: 160px; height: 160px; }
 }
