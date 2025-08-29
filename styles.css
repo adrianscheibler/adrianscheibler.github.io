@@ -147,3 +147,83 @@ th { background: #fafafa; }
     height: 140px;
   }
 }
+
+/* --- Gov20 sidebar layout --- */
+.split {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  background: #fff;
+}
+.sidebar h2 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+}
+.sidebar .note {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+.weeklist {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+.weeklist li { margin: 6px 0; }
+.weeklist a {
+  display: block;
+  padding: 6px 8px;
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+.weeklist a:hover {
+  background: #fafafa;
+  border-color: var(--border);
+}
+
+/* Content column */
+.course {
+  display: block;
+}
+.course h1 { margin-bottom: 6px; }
+.course .subtle { margin-top: 0; }
+
+/* Week sections */
+.week-section {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin: 14px 0 18px;
+}
+.week-section h3 { margin: 0 0 6px; }
+.week-meta {
+  margin: 0 0 10px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.links { margin: 0 0 8px 18px; }
+.links li { margin: 4px 0; }
+
+/* Highlight the active week when navigated via #hash */
+.week-section:target {
+  border-color: #111;
+  box-shadow: 0 0 0 3px #11111110;
+}
+
+/* Responsive: stack the sidebar on small screens */
+@media (max-width: 900px) {
+  .split { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+}
