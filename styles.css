@@ -215,3 +215,39 @@ th { background: #fafafa; }
 /* Minimal week sections: no boxes, airy spacing */
 .week-section { border: none; border-radius: 0; padding: 0; margin: 16px 0; }
 
+/* === Ultra-condensed Gov20 sidebar (keeps full titles) === */
+.split { grid-template-columns: 170px 1fr; }  /* narrower sidebar */
+@media (min-width: 1200px) { .split { grid-template-columns: 190px 1fr; } }
+
+.sidebar {
+  padding: 8px;
+  font-size: 12px;              /* smaller sidebar text only */
+}
+
+.sidebar h2 {
+  margin: 0 0 4px 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+
+.weeklist {
+  margin: 4px 0 0 0;
+  max-height: 48vh;             /* keep the whole sidebar short */
+  overflow: auto;               /* scroll inside if needed */
+  padding-right: 2px;           /* tiny gutter for scrollbar */
+}
+
+.weeklist li { margin: 0; }
+
+.weeklist a {
+  padding: 2px 4px;             /* tighter hit area */
+  line-height: 1.1;             /* reduce vertical footprint */
+  border-radius: 4px;
+}
+
+.weeklist a:hover {
+  background: #f6f6f6;
+  border-color: transparent;
+}
+
