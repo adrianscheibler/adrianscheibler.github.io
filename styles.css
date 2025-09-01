@@ -214,7 +214,7 @@ html { overflow-y: scroll; }
 
 .sidebar {
   padding: 8px;
-  font-size: 12px;                                          /* smaller sidebar text only */
+  font-size: 13px;                                          /* smaller sidebar text only */
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -239,7 +239,7 @@ html { overflow-y: scroll; }
 .weeklist a {
   display: block;
   padding: 2px 4px;                                         /* tight rows */
-  line-height: 1.1;
+  line-height: 1.2;
   color: var(--text);
   border-radius: 4px;
 }
