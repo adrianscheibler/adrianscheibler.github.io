@@ -203,3 +203,15 @@ th { background: #fafafa; }
   .hero { grid-template-columns: 1fr; }
   .headshot { width: 160px; height: 160px; }
 }
+
+/* Condense the Gov20 sidebar and make the page more compact */
+.split { grid-template-columns: 190px 1fr; }         /* slightly narrower sidebar */
+.sidebar { padding: 10px; font-size: 13px; }
+.sidebar h2 { margin: 0 0 6px 0; font-weight: 700; }
+.weeklist { max-height: 60vh; overflow: auto; margin-top: 6px; }
+.weeklist li { margin: 2px 0; }
+.weeklist a { padding: 3px 6px; line-height: 1.2; }
+
+/* Minimal week sections: no boxes, airy spacing */
+.week-section { border: none; border-radius: 0; padding: 0; margin: 16px 0; }
+
