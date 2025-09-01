@@ -205,23 +205,19 @@ th { background: #fafafa; }
 }
 
 /* Condense the Gov20 sidebar and make the page more compact */
-.split { grid-template-columns: 190px 1fr; }         /* slightly narrower sidebar */
-.sidebar { padding: 10px; font-size: 13px; }
-.sidebar h2 { margin: 0 0 6px 0; font-weight: 700; }
-.weeklist { max-height: 60vh; overflow: auto; margin-top: 6px; }
-.weeklist li { margin: 2px 0; }
-.weeklist a { padding: 3px 6px; line-height: 1.2; }
+/* Prevent layout shift from scrollbar differences */
+html { overflow-y: scroll; }
 
-/* Minimal week sections: no boxes, airy spacing */
-.week-section { border: none; border-radius: 0; padding: 0; margin: 16px 0; }
-
-/* === Ultra-condensed Gov20 sidebar (keeps full titles) === */
-.split { grid-template-columns: 170px 1fr; }  /* narrower sidebar */
+/* Gov20 sidebar: compact + keeps full titles */
+.split { grid-template-columns: 170px 1fr; }                 /* narrow sidebar */
 @media (min-width: 1200px) { .split { grid-template-columns: 190px 1fr; } }
 
 .sidebar {
   padding: 8px;
-  font-size: 12px;              /* smaller sidebar text only */
+  font-size: 12px;                                          /* smaller sidebar text only */
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
 }
 
 .sidebar h2 {
@@ -232,22 +228,22 @@ th { background: #fafafa; }
 }
 
 .weeklist {
+  list-style: none;
+  padding: 0;
   margin: 4px 0 0 0;
-  max-height: 48vh;             /* keep the whole sidebar short */
-  overflow: auto;               /* scroll inside if needed */
-  padding-right: 2px;           /* tiny gutter for scrollbar */
+  max-height: 48vh;                                         /* cap height so it stays short */
+  overflow: auto;                                           /* internal scroll if needed */
+  padding-right: 2px;
 }
-
 .weeklist li { margin: 0; }
-
 .weeklist a {
-  padding: 2px 4px;             /* tighter hit area */
-  line-height: 1.1;             /* reduce vertical footprint */
+  display: block;
+  padding: 2px 4px;                                         /* tight rows */
+  line-height: 1.1;
+  color: var(--text);
   border-radius: 4px;
 }
+.weeklist a:hover { background: #f6f6f6; }
 
-.weeklist a:hover {
-  background: #f6f6f6;
-  border-color: transparent;
-}
-
+/* Minimal week sections: no boxes, airy spacing */
+.week-section { border: none; border-radius: 0; padding: 0; margin: 16px 0; }
