@@ -175,7 +175,7 @@ th { background: #fafafa; }
   list-style: none;
   padding: 0;
   margin: 6px 0 0 0;
-  max-height: 56vh;   /* cap height; scroll inside if needed */
+  max-height: 60vh;   /* cap height; scroll inside if needed */
   overflow: auto;
   padding-right: 2px;
 }
